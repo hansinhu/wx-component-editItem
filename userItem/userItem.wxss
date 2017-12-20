@@ -1,0 +1,89 @@
+/* components/common/userItem/userItem.wxss */
+.cell-nopadding{
+  padding: 0;
+  font-size: 0;
+  width: 750rpx;
+  height: 100rpx;
+  position: relative;
+  border-bottom: 1px solid #eee;
+}
+.cell-inner{
+  width: 1000rpx;
+  position: absolute;
+  top:0;
+}
+.cell-innershow{
+  left: -250rpx;
+}
+.cell__fl{
+  float: left;
+}
+.cell__fr{
+  float: right;
+}
+.p-5{
+  padding: 5rpx;
+}
+.cell_footer{
+  font-size:0;
+  position:absolute;
+  right:-250rpx;
+}
+.contact-avatar-box{
+  margin-right: 5rpx;
+  margin-top: 15rpx;
+  width:80rpx; 
+  height: 80rpx; 
+  border-radius: 40rpx;
+  overflow: hidden;
+}
+.contact-avatar{
+  vertical-align: middle;
+  width: 100%;
+  height: 100%;
+}
+.contact-name{
+  font-size: 32rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+}
+.name-view{
+  display: flex;
+  flex-direction: column;
+}
+.contact-coname{
+  font-size: 24rpx;
+  color: #666;
+  height: 50rpx;
+  line-height: 50rpx;
+}
+.contact-btn{
+  display:inline-block;
+  height: 100rpx;
+  line-height: 100rpx;
+  border-radius: 0;
+  padding: 0;
+  width: 120rpx;
+  overflow: hidden;
+  font-size: 30rpx;
+}
+.add-btn{
+  position: fixed;
+  right: 10rpx;
+  bottom: 20rpx;
+  background-color: transparent;
+}
+.add-btn::after{
+  border: none;
+}
+.add-icon{
+  width: 60rpx;
+  height: 60rpx;
+}
+.no-more{
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: #666;
+}

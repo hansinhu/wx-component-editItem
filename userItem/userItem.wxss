@@ -1,9 +1,10 @@
 /* components/common/userItem/userItem.wxss */
+
 .cell-nopadding{
   padding: 0;
   font-size: 0;
   width: 750rpx;
-  height: 100rpx;
+  height: 148rpx;
   position: relative;
   border-bottom: 1px solid #eee;
 }
@@ -30,11 +31,12 @@
   right:-250rpx;
 }
 .contact-avatar-box{
-  margin-right: 5rpx;
-  margin-top: 15rpx;
-  width:80rpx; 
-  height: 80rpx; 
-  border-radius: 40rpx;
+  margin-right: 20rpx;
+  margin-top: 30rpx;
+  margin-left: 30rpx;
+  width:88rpx; 
+  height: 88rpx; 
+  border-radius: 50rpx;
   overflow: hidden;
 }
 .contact-avatar{
@@ -44,28 +46,38 @@
 }
 .contact-name{
   font-size: 32rpx;
-  height: 50rpx;
-  line-height: 50rpx;
+  color: #222222;
+  height: 40rpx;
+  line-height: 40rpx;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  max-width:600rpx;
 }
 .name-view{
   display: flex;
   flex-direction: column;
+  margin-top: 30rpx;
 }
 .contact-coname{
-  font-size: 24rpx;
-  color: #666;
+  font-size: 28rpx;
+  color: #888888;
   height: 50rpx;
   line-height: 50rpx;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  max-width:600rpx;
 }
 .contact-btn{
   display:inline-block;
-  height: 100rpx;
-  line-height: 100rpx;
+  height: 148rpx;
+  line-height: 148rpx;
   border-radius: 0;
   padding: 0;
   width: 120rpx;
   overflow: hidden;
-  font-size: 30rpx;
+  font-size: 28rpx;
 }
 .add-btn{
   position: fixed;

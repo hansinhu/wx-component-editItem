@@ -6,11 +6,11 @@
     bindtouchend="touchendFn"
     class="cell-inner">
     <view  class="cell__fl contact-avatar-box">
-      <image src="{{avatar||'/static/images/tabBar/contact_active.png'}}" class="contact-avatar"></image>
+      <image src="{{avatar||'/static/images/home/avatar_default.png'}}" class="contact-avatar"></image>
     </view>
     <view class="cell__fl p-5 name-view">
       <text class="contact-name">{{userItem.name}}</text>
-      <text class="contact-coname">{{userItem.company||'no company'}}</text>
+      <text class="contact-coname">{{userItem.company||'--'}}</text>
     </view>
   </view>
   <view class="cell__fr cell_footer">

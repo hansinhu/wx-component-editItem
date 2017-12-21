@@ -75,7 +75,7 @@ Component({
         return;
       }
       let left = this.data.nowLeft;
-      if( left > -150 ){ //向右拉或者向左拉伸不到100则复位
+      if (left > -100 ){ //向右拉或者向左拉伸不到100则复位
         left = 0
       }else{
         left = -250

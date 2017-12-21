@@ -1,5 +1,7 @@
 <!--components/common/userItem/userItem.wxml-->
-<view class="weui-cell cell-nopadding" style="{{'left: ' + nowLeft +'rpx'}}">
+<view 
+  class="{{transitonDone?'cell-tansiton weui-cell cell-nopadding':'weui-cell cell-nopadding'}}" 
+  style="{{'left: ' + nowLeft +'rpx'}}">
   <view
     bindtouchstart="touchstartFn"
     bindtouchmove="touchmoveFn"
@@ -10,7 +12,7 @@
     </view>
     <view class="cell__fl p-5 name-view">
       <text class="contact-name">{{userItem.name}}</text>
-      <text class="contact-coname">{{userItem.company||'--'}}</text>
+      <text class="contact-coname">{{userItem.company||'—'}}</text>
     </view>
   </view>
   <view class="cell__fr cell_footer">

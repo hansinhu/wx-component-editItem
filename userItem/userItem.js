@@ -14,11 +14,12 @@ Component({
    * 组件的初始数据
    */
   data: {
-    startLeft: 0,
-    endLeft: 1,
-    offsetLeft: 0,
-    nowLeft: 0,
-    isClick: true,
+    startLeft: 0,//滑动j开始left
+    endLeft: 1, //滑动结束left
+    offsetLeft: 0, //记录上一次的偏移量
+    nowLeft: 0, //实时left偏移量
+    isClick: true, //是单击还是滑动（不需要了）
+    transitonDone: false, //过渡效果
   },
 
   /**
@@ -36,11 +37,10 @@ Component({
     },
     touchstartFn:function(e){
       //let id = e.currentTarget.dataset.id || e.target.dataset.id || e.target.id;
-      let offsetLeft = e.target.offsetLeft;
       this.setData({
         startLeft: e.touches[0].pageX,
-        offsetLeft: offsetLeft,
-        isClick: true
+        isClick: true,
+        transitonDone: false
       })
     },
     touchmoveFn: function (e) {
@@ -48,16 +48,8 @@ Component({
       let left = this.data.nowLeft;
       if (this.data.offsetLeft < 0) {
         left = vx - 250
-        if (left < -250) {
-          left = -250
-        }
       } else {
         left = vx;
-        if (left < -250) {
-          left = -250
-        } else if (left > 100) {
-          left = 100
-        }
       }
 
       this.setData({
@@ -75,16 +67,20 @@ Component({
         return;
       }
       let left = this.data.nowLeft;
-      if (left > -100 ){ //向右拉或者向左拉伸不到100则复位
+      let inLeft = this.data.offsetLeft < 0;
+      if (inLeft && left > -200) {//如果已经在左侧，向右拉50就复位
         left = 0
-      }else{
-        left = -250
+      } else if (!inLeft && left > -100) {//如果不在左侧，需要拉动超过100才生效
+        left = 0;
+      } else {
+        left = -250;
       }
       this.setData({
         startLeft: 0,
         endLeft: 0,
-        offsetLeft: 0,
-        nowLeft: left
+        offsetLeft: left,
+        nowLeft: left,
+        transitonDone: true
       })
     },
     editUser: function (e) {

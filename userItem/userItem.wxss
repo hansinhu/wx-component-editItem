@@ -8,6 +8,9 @@
   position: relative;
   border-bottom: 1px solid #eee;
 }
+.cell-tansiton{
+  transition: all 0.3s linear;    
+}
 .cell-inner{
   width: 1000rpx;
   position: absolute;
@@ -46,6 +49,7 @@
 }
 .contact-name{
   font-size: 32rpx;
+  font-family: HelveticaNeue-Medium;
   color: #222222;
   height: 40rpx;
   line-height: 40rpx;
@@ -61,6 +65,7 @@
 }
 .contact-coname{
   font-size: 28rpx;
+  font-family: PingFangSC-Regular;
   color: #888888;
   height: 50rpx;
   line-height: 50rpx;

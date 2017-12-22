@@ -6,7 +6,7 @@
     bindtouchstart="touchstartFn"
     bindtouchmove="touchmoveFn"
     bindtouchend="touchendFn"
-    class="cell-inner">
+    class="{{checked?'cell-checked cell-inner':'cell-inner'}}">
     <view  class="cell__fl contact-avatar-box">
       <image src="{{avatar||'/static/images/home/avatar_default.png'}}" class="contact-avatar"></image>
     </view>

@@ -1,5 +1,8 @@
 /* components/common/userItem/userItem.wxss */
 
+.cell-checked{
+  background-color: #F5F5F5;
+}
 .cell-nopadding{
   padding: 0;
   font-size: 0;
@@ -34,9 +37,7 @@
   right:-250rpx;
 }
 .contact-avatar-box{
-  margin-right: 20rpx;
-  margin-top: 30rpx;
-  margin-left: 30rpx;
+  margin:30rpx 20rpx 30rpx;
   width:88rpx; 
   height: 88rpx; 
   border-radius: 50rpx;

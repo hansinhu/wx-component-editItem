@@ -20,6 +20,7 @@ Component({
     nowLeft: 0, //实时left偏移量
     isClick: true, //是单击还是滑动（不需要了）
     transitonDone: false, //过渡效果
+    checked:false
   },
 
   /**
@@ -33,6 +34,7 @@ Component({
         offsetLeft: 0,
         nowLeft: 0,
         isClick: true,
+        checked:false
       })
     },
     touchstartFn:function(e){
@@ -40,7 +42,8 @@ Component({
       this.setData({
         startLeft: e.touches[0].pageX,
         isClick: true,
-        transitonDone: false
+        transitonDone: false,
+        checked: true
       })
     },
     touchmoveFn: function (e) {
@@ -80,7 +83,8 @@ Component({
         endLeft: 0,
         offsetLeft: left,
         nowLeft: left,
-        transitonDone: true
+        transitonDone: true,
+        checked:false
       })
     },
     editUser: function (e) {

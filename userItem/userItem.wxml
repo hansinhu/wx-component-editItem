@@ -18,11 +18,9 @@
   <view class="cell__fr cell_footer">
       <button 
         bindtap='editUser' 
-        class="mini-btn contact-btn" 
-        type="primary">编辑</button>
+        class="mini-btn mini-btn1 contact-btn" >编辑</button>
       <button  
         bindtap='deletEvent' 
-        class="mini-btn contact-btn" 
-        type="warn">删除</button>
+        class="mini-btn mini-btn2 contact-btn" >删除</button>
     </view>
 </view>

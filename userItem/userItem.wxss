@@ -84,6 +84,13 @@
   width: 120rpx;
   overflow: hidden;
   font-size: 28rpx;
+  color: #fff;
+}
+.mini-btn1 {
+    background: rgba(0,119,255,0.70);
+}
+.mini-btn2 {
+    background: rgba(255,0,34,0.70);
 }
 .add-btn{
   position: fixed;

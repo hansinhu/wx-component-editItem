@@ -16,6 +16,8 @@ Component({
   data: {
     startLeft: 0,//滑动j开始left
     endLeft: 1, //滑动结束left
+    startTop: 0, //记录上下偏移量，如果角度小于30度才算左右滑动
+    endTop: 0,//记录上下偏移量
     offsetLeft: 0, //记录上一次的偏移量
     nowLeft: 0, //实时left偏移量
     isClick: true, //是单击还是滑动（不需要了）
@@ -31,6 +33,8 @@ Component({
       this.setData({
         startLeft: 0,
         endLeft: 1,
+        startTop:0,
+        endTop:0,
         offsetLeft: 0,
         nowLeft: 0,
         isClick: true,
@@ -38,16 +42,26 @@ Component({
       })
     },
     touchstartFn:function(e){
-      //let id = e.currentTarget.dataset.id || e.target.dataset.id || e.target.id;
       this.setData({
-        startLeft: e.touches[0].pageX,
+        startLeft: e.touches[0].clientX,
+        startTop: e.touches[0].clientY,
         isClick: true,
         transitonDone: false,
         checked: true
       })
     },
     touchmoveFn: function (e) {
-      let vx = e.touches[0].pageX - this.data.startLeft; //相对起始点距离
+      this.setData({
+        isClick: false
+      })
+      let vx = e.touches[0].clientX - this.data.startLeft; //相对起始点X距离
+      let vy = e.touches[0].clientY - this.data.startTop; //相对起始点Y距离
+      if(vy == 0){vy = 0.01}
+      let deg = vx / vy
+      deg = deg >= 0 ? deg: deg*(-1)
+      if (deg < 1.73){
+        return
+      }
       let left = this.data.nowLeft;
       if (this.data.offsetLeft < 0) {
         left = vx - 250
@@ -56,8 +70,7 @@ Component({
       }
 
       this.setData({
-        nowLeft: left,
-        isClick: false
+        nowLeft: left
       })
     },
     touchendFn: function (e) {
